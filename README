@@ -8,6 +8,7 @@ Instructions:
 
 Requirements:
  - Python2
+ - python-qt4-dbus 
  - Clementine
 
 http://code.google.com/p/clementine-webremote/

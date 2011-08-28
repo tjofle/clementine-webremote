@@ -26,29 +26,37 @@ class RequestHandler (BaseHTTPServer.BaseHTTPRequestHandler):
         self.clementine = Clementine.Clementine()
         web = None
         web = Web.Web(self.clementine.GetInfo())
-        if self.path.endswith(".png"):
-            self.show_button()
-        if self.path.endswith(".jpg"):
-          self.show_cover()
-        elif self.path.endswith(".css"):
-          f = open('style.css')
-          self.send_response(200)
-          self.send_header('Content-type', 'text/css')
-          self.end_headers()
-          self.wfile.write(f.read())
-          f.close()
-        else:
+        if self.path.endswith("refresh"):
+        
           self.send_response(200)
           self.send_header("Content-type", "text/html")
-          self.check_function()
-
           self.end_headers()
-          self.wfile.write(web.PrintHeader())
           self.wfile.write(web.PrintInfo())
-          self.wfile.write(web.PrintCover())
-          self.wfile.write(web.PrintControls())
-          self.wfile.write(web.PrintFooter())
-        return
+          return
+              
+        else:
+            if self.path.endswith(".png"):
+                self.show_button()
+            if self.path.endswith(".jpg"):
+              self.show_cover()
+            elif self.path.endswith(".css"):
+              f = open('style.css')
+              self.send_response(200)
+              self.send_header('Content-type', 'text/css')
+              self.end_headers()
+              self.wfile.write(f.read())
+              f.close()
+            else:
+              self.send_response(200)
+              self.send_header("Content-type", "text/html")
+              self.check_function()
+              self.end_headers()
+              self.wfile.write(web.PrintHeader())
+              self.wfile.write(web.PrintInfo())
+              self.wfile.write(web.PrintCover())
+              self.wfile.write(web.PrintControls())
+              self.wfile.write(web.PrintFooter())
+            return
     
     def show_button (self):
         btn = str(self.path)
@@ -82,6 +90,11 @@ class RequestHandler (BaseHTTPServer.BaseHTTPRequestHandler):
             self.clementine.Prev()
           elif str(cmd['action']) == "['Stop']":
             self.clementine.Stop()
+          elif str(cmd['action']) == "['VolumeUp']":
+            self.clementine.VolumeUp()
+          elif str(cmd['action']) == "['VolumeDown']":
+            self.clementine.VolumeDown()
+                   
     
 def main (argv):
     port = 3000

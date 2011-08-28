@@ -6,8 +6,10 @@ body {
 .cover {
 	padding-top: 10px;
 	margin: 0px;
-	width: 100%;
-	max-width: 400px;
+	width: 80%;
+	
+	max-width: 300px;
+	
 }
 .info {
 	margin: 0px;
@@ -18,5 +20,5 @@ body {
 }
 
 .cbutton img {
-	width: 52px;
+	width: 45px;
 }

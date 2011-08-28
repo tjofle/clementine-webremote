@@ -42,3 +42,12 @@ class Clementine:
     
   def GetInfo(self):
     return self.server.GetMetadata()
+  
+  def VolumeUp(self):
+    self.server.VolumeUp(10)
+    return True
+    
+  def VolumeDown(self):
+    self.server.VolumeDown(10)
+    return True
+    
