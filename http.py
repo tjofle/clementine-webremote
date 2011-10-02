@@ -51,11 +51,16 @@ class RequestHandler (BaseHTTPServer.BaseHTTPRequestHandler):
               self.send_header("Content-type", "text/html")
               self.check_function()
               self.end_headers()
-              self.wfile.write(web.PrintHeader())
-              self.wfile.write(web.PrintInfo())
-              self.wfile.write(web.PrintCover())
-              self.wfile.write(web.PrintControls())
-              self.wfile.write(web.PrintFooter())
+              if self.clementine.GetTrackNum() == -1:
+		print   "Clementine is stopped"
+		self.wfile.write(web.PrintStopped())
+	      else:
+		print self.clementine.GetTrackNum()
+		self.wfile.write(web.PrintHeader())
+		self.wfile.write(web.PrintInfo())
+		self.wfile.write(web.PrintCover())
+		self.wfile.write(web.PrintControls())
+		self.wfile.write(web.PrintFooter())
             return
     
     def show_button (self):
@@ -112,10 +117,10 @@ def main (argv):
                 port = int(arg)
             except ValueError:
                 print   "Incorrect port, launching at 3000."
+    clementine = Clementine.Clementine()
     print "Using port: " + str(port)
     httpd = BaseHTTPServer.HTTPServer(('', port), RequestHandler)
     httpd.serve_forever()
-    
 def usage ():
     print "\
     Usage: http.py [options]\n\

@@ -12,3 +12,16 @@ Requirements:
  - Clementine
 
 http://code.google.com/p/clementine-webremote/
+
+
+History:
+
+0.2 (Thanks JH.Hanne)
+ * Volume Up/Down functionality
+ * UTF-8 Encoding
+ * No album/artist crash fix
+ * Ajax refresh (Increased refresh time from 1 to 5 secconds)
+ * Fixed crash when Clementine is not playing
+ * Fixed crash when Clementine is not running
+0.1
+ * First release

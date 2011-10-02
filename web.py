@@ -20,6 +20,12 @@ import unicodedata
 class Web:
   def __init__(self, info):
     self.info = info
+    if not(self.info.has_key('album')):
+        self.info['album']="Unknown album"
+    if not(self.info.has_key('title')):
+        self.info['title']="Unknown title"
+    if not(self.info.has_key('artist')):
+        self.info['artist']="Unknown artist"
     return
     
   def PrintHeader(self):
@@ -31,8 +37,7 @@ class Web:
     <head>\n\
       <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>\n\
       <link rel='stylesheet' href='style.css' type='text/css' media='screen' />\n\
-      <!--<title>" + self.info['artist'].encode('utf-8') + " - " + self.info['title'].encode('utf-8') + "</title>\n\-->\
-      <title>Clementine Remote Control</title>\n\
+      <title>" + self.info['artist'].encode('utf-8') + " - " + self.info['title'].encode('utf-8') + " - Clementine Web Remote</title>\n\
       <script type='text/javascript'>\n\
 			var cur='';\
 			function loadXMLDoc()\n\
@@ -58,7 +63,7 @@ class Web:
 			  }\n\
 			xmlhttp.open('GET','refresh',true);\n\
 			xmlhttp.send();\n\
-			setTimeout('loadXMLDoc()',1000);\n\
+			setTimeout('loadXMLDoc()',5000);\n\
 			}\n\
 		 </script>\n\
 		 </head>\n<body onload='loadXMLDoc()'>"
@@ -70,14 +75,6 @@ class Web:
     <img class='cover' src='" + str(random.random()) + ".jpg' alt='" + self.info['album'].encode('utf-8') + "'id='cover' />"
     
   def PrintInfo(self):
-    
-    if not(self.info.has_key('album')):
-        self.info['album']="unknown album"
-    if not(self.info.has_key('title')):
-        self.info['title']="unknown title"
-    if not(self.info.has_key('artist')):
-        self.info['artist']="unknown artist"
-
     title = self.info['title'].encode('utf-8')
     return "\
     <div class='info' id='info'>\n\
@@ -101,3 +98,19 @@ class Web:
     return "\
     </body>\n\
 </html>\n"
+
+  def PrintStopped(self):
+    return "\
+    <?xml version='1.0' encoding='UTF-8'?>\
+    <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML Basic 1.1//EN\"\
+    \"http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd\">\
+    <html>\n\
+    <head>\n\
+      <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>\n\
+      <link rel='stylesheet' href='style.css' type='text/css' media='screen' />\n\
+      <title>Not Playing - Clementine Web Remote</title>\n\
+    </head>\n\
+    <body>\n\
+      Clementine is stopped!\n\
+    </body>\n\
+    </html>\n"

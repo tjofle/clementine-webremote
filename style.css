@@ -2,6 +2,7 @@ body {
 	background-color: black;
 	margin: 0px;
 	text-align: center;
+	color: white;
 }
 .cover {
 	padding-top: 10px;
@@ -13,7 +14,6 @@ body {
 }
 .info {
 	margin: 0px;
-	color: white;
 }
 .artist {
 	font-weight: bold;

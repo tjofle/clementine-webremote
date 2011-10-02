@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#	 This program is free software: you can redistribute it and/or modify
+#    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
@@ -16,13 +16,19 @@
 
 import dbus
 import dbus.service
+import sys
 from dbus.mainloop.qt import DBusQtMainLoop
 
 class Clementine:
   
   def __init__(self):
     self.bus = dbus.SessionBus()
-    self.server = self.bus.get_object('org.mpris.clementine', '/Player')
+    try:
+      self.server = self.bus.get_object('org.mpris.clementine', '/Player')
+      self.tracklist = self.bus.get_object('org.mpris.clementine', '/TrackList')
+    except:
+      print "Clementine is not running? Exiting..."
+      sys.exit(-1)
   
   def Next(self):
     self.server.Next()
@@ -50,4 +56,6 @@ class Clementine:
   def VolumeDown(self):
     self.server.VolumeDown(10)
     return True
-    
+  
+  def GetTrackNum(self):
+    return self.tracklist.GetCurrentTrack()
