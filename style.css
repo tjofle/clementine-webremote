@@ -22,3 +22,162 @@ body {
 .cbutton img {
 	width: 45px;
 }
+
+.tracklist {
+	color: white;
+	text-align: left;
+}
+
+.outerTracklistDiv{
+	margin:0 auto;
+	width:650px;
+/*	left:50%;
+	margin-left:-150px;*/
+/* 	border:10px solid white; */
+}
+
+.playlistManipulatorOuter{
+	margin:0 auto;
+	width:504px;
+/* 	width:420px; */
+/* 	border:1px solid red; */
+}
+
+.playlistManipulatorInnerLeft{
+	float:left;
+	width:250px;
+/* 	border:1px solid white; */
+}
+
+.playlistManipulatorInnerRight{
+	float:right;
+	width:250px;
+/* 	border:1px solid white; */
+}
+
+.playlistManipulatorInnerBottom{
+	clear:both;
+/* 	border:1px solid blue; */
+}
+
+.tracklistTrackNo{
+	width:20px;
+/* 	border:1px solid white; */
+	vertical-align:top;
+	text-align:right;
+	padding-right: 5px;
+/*	position:relative;
+	top:0px;
+	left:0px;*/
+/* 	float:left; */
+}
+.tracklistArtistTitle{
+	width:400px;
+/* 	border:1px solid red; */
+/* 	vertical-align:top; */
+	text-align:left;
+/*	position:relative;
+	top:-21px;
+	left:22px;*/
+/* 	float:left; */
+}
+.tracklistTime{
+	width:50px;
+/* 	border:1px solid blue; */
+	vertical-align:top;
+	text-align:right;
+/*	position:relative;
+	top:-42px;
+	left:324px;*/
+/* 	float:right; */
+}
+.tracklistOptions{
+	width:20px;
+/* 	border:1px solid green; */
+	vertical-align:top;
+	text-align:right;
+	/*position:relative;
+	top:-63px;
+	left:376px;*/
+/* 	float:right; */
+}
+
+table,tr,td {
+ 	padding:0px;
+ 	margin:0px; 
+/* 	border:1px solid white; */
+	border-style:none;
+}
+
+.tracklistTable {
+	margin-left:auto; 
+	margin-right:auto; 
+/* 	width:500px; */
+}
+
+.tracklist div {
+	color: white;
+/* 	text-align: left; */
+}
+
+.tracklist a {
+	color: white;
+	text-decoration:none;
+} 
+
+span.generalURL a {
+	color: white;
+/* 	color: red; */
+	text-decoration:underline;
+}
+
+span.generalURL a:hover {
+	color: white;
+/* 	color: red; */
+	text-decoration: underline;
+} 
+
+/*.tracklist a:link {
+	color: white;
+}*/
+
+/*.tracklist a:visited {
+	color: blue;
+}*/
+
+.tracklist a:hover {
+/* 	color: red; */
+/* 	color: #0099ff; */
+/* 	color: #66ffff; */
+/* 	color: #ff6666; */
+	color: #ff9900;
+}
+
+.currentTrack a {
+	color: yellow;
+}
+
+.currentTrack {
+	color: yellow;
+}
+
+/*.tracklist a:hoover {
+	color: green;
+}*/
+
+/*a:hoover {
+	color: red;
+} */
+
+/*a:link {color:#FF0000;}      /* unvisited link */
+/* a:visited {color:#00FF00;}  /* visited link */
+/* a:hover {color:#FF00FF;}  /* mouse over link */
+/* a:active {color:#0000FF;}  /* selected link */  
+
+
+div.container {
+	width:98%; 
+	margin:1%;
+/* 	border:1px solid blue; */
+	text-align:center
+}

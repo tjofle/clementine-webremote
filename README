@@ -2,7 +2,8 @@ clementine-webremote
 
 Instructions:
  - Uncompress it.
- - Launch with: ./http.py --port 3000
+ - Optional: Set your playlist-directory in config.py
+ - Launch with: ./clementineWebRemote.py (or with ./clementineWebRemote.py --port 3000)
  - If you get an error, try launching it with: python2 http.py --port 3000
  - Open in your browser: http://<host>:3000
 
@@ -13,8 +14,26 @@ Requirements:
 
 http://code.google.com/p/clementine-webremote/
 
+Credit for the remove-track icon "image/cross_300.png" goes to user OCAL on clker.com
+and is used under Creative Commons CC0 public domain dedication.
 
 History:
+
+0.3 (By Kjetil Skjæveland)
+ * Show tracklist
+ * Select song from tracklist
+ * Remove track from tracklist
+ * Clear tracklist
+ * Open playlist-files from (configurable) playlist-directory on host PC
+ * Save tracklist as m3u file in playlist-directory
+ * Restructured portions of original code
+ * Does not crash / malfunction when Clementine is not running
+ * Access from non-localhost much faster (Thanks to Hokascha)
+ * Play-button to play when Clementine is stopped
+ * Shuffle-functionality
+ * Repeat-functionality
+ * Moved __main__ to clementineWebRemote.py
+ * Added configuration file config.py
 
 0.2 (Thanks JH.Hanne)
  * Volume Up/Down functionality
