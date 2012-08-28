@@ -60,6 +60,7 @@ class Web:
 		\"http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd\">\
 		<html>\n\
 		<head>\n\
+			<meta charset='utf-8'>\
 			<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>\n\
 			<link rel='stylesheet' href='style.css' type='text/css' media='screen' />\n\
 			<title>" + self.info['artist'].encode('utf-8') + " - " + self.info['title'].encode('utf-8') + " - Clementine Web Remote</title>\n\

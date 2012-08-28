@@ -19,6 +19,9 @@ and is used under Creative Commons CC0 public domain dedication.
 
 History:
 
+0.3.01
+ * Fixed utf-8 encoding for non-ajax components.
+
 0.3 (By Kjetil Skjæveland)
  * Show tracklist
  * Select song from tracklist
